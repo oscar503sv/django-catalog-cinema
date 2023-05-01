@@ -1,0 +1,12 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+    {% for movie in movies %}
+        <h1>{{ movie.nombre }}</h1>
+        <img src="{{ movie.imagen.url}}" alt="{{movie.nombre}}">
+        <h2>Director: {{ movie.director }}</h2>
+        <h3>Año: {{ movie.anyo }}</h3>
+        <h3>Duración: {{ movie.duracion }} min.</h3>
+        <h2>Sinopsis: {{ movie.sinopsis }}</h2>
+    {% endfor %}
+{% endblock %} 
