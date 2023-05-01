@@ -1,0 +1,11 @@
+body {
+    background: rgb(250, 235, 215);
+}
+
+.card-movie:hover {
+    border: 1px solid #212529;
+}
+
+.card-director:hover{
+    border: 1px solid #212529;
+}

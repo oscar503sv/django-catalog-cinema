@@ -1,17 +1,24 @@
 {% extends 'layout.html'%}
 
 {%block content%}
-    <h1>Directores</h1>
+    <h1 class="mb-2 text-center fw-bold">Directores</h1>
+    
     {% for director in directors %}
-        <img src="{{director.imagen.url}}" alt="{{director.nombre}}">
-        <h1>{{director.nombre}} {{director.apellidos}}</h1>
-        <h3>{{director.fecha_nacimiento}} - 
-        {% if director.fecha_defuncion %}
-            {{director.fecha_defuncion}} 
+        <div class="card-director d-flex p-2">
+            <div class="card col-md-4">
+                <img src="{{director.imagen.url}}" alt="{{director.nombre}}">
+            </div>
+            <div class="card-body col-md-8 p-1 text-justify">
+                <h1>{{director.nombre}} {{director.apellidos}}</h1>
+            <h4>{{director.fecha_nacimiento}} - 
+            {% if director.fecha_defuncion %}
+                {{director.fecha_defuncion}} 
             {% else %}
-                <h3>Actualidad</h3>
-        {% endif %}</h3>
-        <h2>{{director.biografia}}</h2>
+                <h4>Actualidad</h4>
+             {% endif %}</h4>
+            <h3>{{director.biografia}}</h3>
+            </div>
+        </div>
 
     {% endfor %}
 {%endblock%}

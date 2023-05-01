@@ -2,11 +2,20 @@
 
 {% block content %}
     {% for movie in movies %}
+    
+<div class="card-movie d-flex p-2">
+    <div class="card col-md-4">
+        <img src="{{ movie.imagen.url}}" alt="{{movie.nombre}}" class="img-fluid">
+    </div>  
+    <div class="card-body col-md-8 p-1 text-justify">      
         <h1>{{ movie.nombre }}</h1>
-        <img src="{{ movie.imagen.url}}" alt="{{movie.nombre}}">
-        <h2>Director: {{ movie.director }}</h2>
-        <h3>Año: {{ movie.anyo }}</h3>
-        <h3>Duración: {{ movie.duracion }} min.</h3>
-        <h2>Sinopsis: {{ movie.sinopsis }}</h2>
+        <h3>Director: {{ movie.director }}</h3>
+        <h4>Año: {{ movie.anyo }}</h4>
+        <h4>Duración: {{ movie.duracion }} min.</h4>
+        <h3>Sinopsis: {{ movie.sinopsis }}</h3>
+    </div>
+</div>        
+
     {% endfor %}
 {% endblock %} 
+
